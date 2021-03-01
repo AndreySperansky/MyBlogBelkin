@@ -7,3 +7,7 @@ class News(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     photo = models.ImageField(upload_to='photos/%Y/%m/%d/')
     is_published = models.BooleanField(default=True)
+
+    # Чтобы представить строковое представление поля модели используем метод __str__
+    def __str__(self):
+        return self.title
